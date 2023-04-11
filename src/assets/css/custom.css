@@ -1,0 +1,547 @@
+body {
+    /* font-family: "Montserrat", sans-serif */
+    font-family: 'Open sans', sans-serif !important;
+}
+.main {
+    position: relative;
+}
+#navbar-brand {
+    font-size: 20px;
+    font-weight: 600;
+}
+.navbar-nav a p {
+    text-transform: initial;
+    font-size: 17px;
+    font-weight: 500;
+    color:rgb(245, 245, 245)
+}
+.navbar.navbar-expand-lg {
+    background-color: rgb(10, 10, 10);
+}
+.navbar-translate a span{
+    text-transform: initial;
+}
+.brand.custom .h1-seo{
+    color: rgb(245, 245, 245);
+    font-weight: 700;
+    text-shadow: 3px 3px 1px rgba(26, 26, 26,0.8);
+    margin-bottom: 1rem;
+    text-transform: initial;
+}
+.brand.custom p {
+    color: rgb(170,170,170);
+    text-shadow: 1px 1px 1px rgb(50,50,50);
+    font-size: 1rem;
+    font-weight: 500;
+}
+.custom-logo {
+    position: relative;
+    width: 3.5rem;
+    height: 3.5rem;
+    padding: 0.3rem;
+    border-radius: 50%;
+    box-shadow: 1px 1px 10px red;
+}
+
+.footer ul.custom li {
+    display:block;
+    font-size:1rem;
+    font-weight: 400;
+    margin-bottom:0.3rem;
+}
+.footer ul.custom li a{
+    padding: 0 !important;
+}
+.footer-block {
+    position: relative;
+    padding: 0 2rem 1rem 2rem !important;
+    align-items: center;
+    min-width: 20rem;
+}
+.footer-block p {
+    font-weight: 600;
+}
+.footer-block:not(:last-child):after {
+    position: absolute;
+    right: 0;
+    top: 10%;
+    content: "";
+    width:1px;
+    height:80%;
+    background-color: rgb(24, 24, 24);
+}
+.page-header.custom {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.65), rgba(0,0,0,0.2));
+}
+.brand.custom {
+    opacity: 1;
+}
+footer.footer {
+    display: block;
+    background-color: rgb(10, 10, 10);
+    text-align: center;
+}
+
+.custom-contact {
+    min-height: calc(70vh);
+    margin: 0 10vw;
+    text-align: center;
+    color: white;
+    padding: 1rem;
+}
+.section.section-contact {
+    background-color: rgb(60, 60, 60);
+}
+.section.section-faq {
+    background-color: rgb(55, 55, 55);
+}
+.section-boost {
+    position: absolute;
+    top: calc(45vh - 8rem);
+    left: 0;
+    right: 0;
+    z-index: 10;
+    overflow-x: auto;
+}
+.section-reqa {
+    color: white;
+    position: relative;
+    background-color: #202020;
+}
+.section-reqa .reqa-block {
+    font-size: 13pt;
+    text-align: center;
+    align-items: center;
+    padding: 1rem;
+}
+.section-reqa .reqa-block i{
+    color: #1FA227;
+    font-size: 53px;
+    padding-bottom: 1.3rem;
+    padding-top: 0.4rem;
+}
+.section-reqa .reqa {
+    font-size: 13pt;
+    position: relative;
+    padding: 1rem;
+    z-index: 1;
+}
+.section-reqa .reqa span {
+    padding: 1rem;
+    cursor: pointer;
+}
+.section-reqa .reqa p {
+    white-space: pre-line;
+    font-size: 12pt;
+    font-weight: 500;
+    text-align: justify;
+    color: #DADADA
+}
+.section.section-order{
+    color: #DBDBDB;
+    background-color: rgba(48, 48, 49, 0.99);
+    text-align: center;
+    justify-items: start;
+    justify-content:space-between;
+}
+.section-order .header {
+    font-size: 30px;
+    font-weight: 600;
+    height: 5rem;
+}
+.section-order img {
+    width: 45px;
+    height: 45px;
+}
+.section-order .order-block {
+    text-align: left;
+    align-items: center;
+    margin-left: 1rem;
+}
+.section-order .row {
+    border-bottom: 1px solid #252525;
+    padding: 2rem 0;
+    text-align: center;
+}
+.section.section-login {
+    background-color: #3a3a3a;
+    height: calc(100vh);
+}
+.section.section-login .container-xl {
+    height: 100%;
+}
+.section.section-login .description {
+    text-align: center;
+}
+.section.section-login .row {
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+.section.section-login .col {
+    text-align: center;
+    min-width: 30rem;
+    max-width: 35rem;
+}
+.section.section-login h2{
+    color: #DADADA;
+}
+.section.section-review {
+    text-align: center;
+    color: white;
+    background-color: #2A2A2A;
+}
+.section-review h4 {
+    font-size: 30px;
+    font-weight: 600;
+}
+.section-review .header p {
+    color: #DBDBDB;
+    font-style: italic;
+}
+.section-review .footer span {
+    font-size: 17px;
+    font-weight: 600;
+}
+.slider-item {
+    font-size: 16px;
+    text-align: left;
+}
+.slider-item h2 {
+    color: rgb(245, 245, 245);
+    font-size: 20px;
+}
+.slider-item p {
+    color:rgb(184, 184, 184);
+}
+.slider-item .date {
+    color: rgb(184, 184, 184);
+    text-align: right;
+}
+.bg-order {
+    background-color: #37373D !important;
+}
+.my-btn-black {
+    color: white;
+    padding: 1rem 2rem;
+    background-color: rgba(48, 48, 49, 0.1);
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 50px;
+    transition: 0.5s;
+    box-shadow: 0px 10px 20px rgba(30, 30, 30, 0.7);
+}
+.my-btn-black:hover {
+    color:rgb(10, 10, 10);
+    background-color: lightgray;
+}
+.my-btn-round {
+    font-size: 1.5rem;
+    font-weight: 500;
+    text-align: center;
+    color: white;
+    padding: 0.5rem 1.2rem;
+    margin: 1rem;
+    background-color: rgba(48, 48, 49, 0.99);
+    border: 1px solid rgb(56, 56, 56);
+    border-radius: 50px;
+    transition: 0.5s;
+    box-shadow: 0px 10px 20px rgba(30, 30, 30, 0.7);
+}
+.my-btn-round:hover {
+    color:rgb(10, 10, 10);
+    background-color: lightgray;
+}
+.order-block {
+    min-width: 10rem;
+}
+.order-block .order-header {
+    color: #CFCECE;
+    font-size: 14px;
+}
+.order-block .order-data {
+    line-height: 2;
+    font-size: 17px;
+    font-weight: 600;
+}
+.reqa-content {
+    width: 55%;
+}
+.reqa span:hover {
+    background-color: rgb(60, 60, 60);
+}
+@media screen and (max-width: 844px){
+    .reqa-content{
+        width: 100%;
+    }
+    .boost-main {
+        min-width: 20rem !important;
+    }
+    .boost-order {
+        min-width: 20rem !important;
+    }
+    .buy-checkout {
+        display: none !important;
+    }
+    .section.section-login .col {
+        min-width: 20rem !important;
+    }
+}
+@media screen and (max-width: 1280px){
+    .boost-main {
+        width: 100% !important;
+    }
+    .boost-order {
+        width: 100% !important;
+    }
+}
+.boost-menu {
+    height: 8rem;
+    margin: auto;
+    color: white;
+    background-color: rgb(200,200,200,0.1);
+    min-width: 80rem;
+}
+.boost-content {
+    justify-content: center;
+    /* background-color: #0f1816; */
+    background-color: #0f1816;
+    padding: 1rem;
+    padding-bottom: 8rem;
+    align-items: center;
+    border-top: 1px solid rgb(60, 60, 60);
+    color: white;
+}
+.boost-end {
+    position: absolute;
+    top: -3rem;
+    background-color: #202020;
+    height: 10rem;
+    width: 100%;
+    transform: skewY(2deg);
+}
+.boost-item {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 12rem;
+    min-width: 10rem;
+    transition: 0.3s;
+}
+.boost-item img {
+    width: 42%;
+    height: 60%;
+}
+.boost-item p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.boost-item:hover {
+    background-color: rgba(30,120,50,0.4);
+}
+.boost-main {
+    width: 90%;
+    margin: auto;
+    align-items: center;
+    font-family: "Open sans", sans-serif;
+    padding: 1rem 1rem;
+    min-width: 35rem;
+    max-width: 40rem;
+}
+.boost-main .d-flex {
+    align-items: center;
+}
+.boost-main .d-flex.title{
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+.boost-main .d-flex span {
+    padding-left: 1rem;
+}
+.boost-main select {
+    color: white;
+    font-size: 1rem;
+    background-color: rgb(37, 37, 37);
+    width: calc(100%);
+    padding: 1rem;
+    border-radius: 5px;
+}
+.boost-main .pt-3 select{
+    padding: 0.5rem;
+}
+.boost-main h5 {
+    color: #e8e8e8;
+    font-size: 31px;
+    font-weight: 550;
+    padding: 0;
+    margin: 0;
+}
+.boost-main img {
+    height: 5rem;
+    width: 5rem;
+}
+.boost-main p {
+    margin: 0;
+    color: #75777A;
+}
+.boost-order {
+    margin: auto !important;
+    width: 90%;
+    justify-content: center;
+    padding: 3rem 0rem 1rem 0rem;
+    min-width: 35rem;
+    max-width: 40rem;
+    height: 30rem;
+}
+.buy-checkout {
+    display: block;
+}
+.boost-buy {
+    border: 4px solid rgb(52, 129, 52);
+    border-radius: 15px;
+}
+.boost-star {
+    margin-top: 1rem;
+    text-align: center;
+}
+.boost-buy .your-order {
+    position: relative;
+    border-radius: 10px;
+    background-color: #121312;
+}
+.boost-buy .buy-now {
+    padding: 2rem 2rem 1rem 2rem;
+    border-radius: 10px;
+    background-color: #191919;
+}
+.boost-buy .buy-now .buy-footer {
+    margin-top: 1rem;
+    text-align: center;
+    color:rgb(184, 184, 184);
+    font-style: italic;
+    font-size: 16px;
+}
+.buy-now .price {
+    color: #ebb434;
+    font-size: 30px;
+    font-weight: 600;
+}
+.buy-now .boost-btn {
+    font-family: "Open sans", sans-serif;
+    margin-top: 1rem;
+    color: white;
+    font-size: 23px;
+    font-weight: 500;
+    background-color: rgba(52, 129, 52, 0.8);
+    padding: 0.7rem 1.5rem;
+    border: 1px solid rgb(41, 41, 41);
+    border-radius: 10px;
+}
+.boost-btn:hover {
+    background-color: rgba(52, 129, 52, 1);
+}
+.boost-buy .shield {
+    position: absolute;
+    right: 5%;
+    top: 1rem;
+    content: "";
+}
+.boost-buy .shield i {
+    color: white;
+    font-size: 9rem;
+    opacity: 0.1;
+}
+.boost-buy p {
+    color: #e8e8e8;
+    font-weight: 500;
+    margin: 0;
+}
+.boost-buy .gubel {
+    font-size: 11pt;
+    height: 33px;
+}
+.boost-buy .gubel i {
+    padding: 0;
+    color: green;
+    font-size: 1rem;
+}
+.mainCheckout {
+    color: #e8e8e8;
+    font-size: 17px;
+    padding: 2rem 0rem 2rem 2.2rem;
+}
+.mainCheckout div{
+    height: 33px;
+}
+.mainCheckout input {
+    width: 16px;
+    height: 16px;
+    margin-right:0.8rem;
+}
+.your-order span {
+    font-size: 27px;
+    font-weight: 600;
+    padding:20px 0px 0 50px;
+    color: #ebb434;
+}
+.your-order i {
+    font-size: 27px;
+    font-weight: 600;
+    padding:20px 0px 0 50px;
+    color: #ebb434;
+}
+.custom-faq {
+    margin: 0 0;
+    color: white;
+    text-align: center;
+}
+.custom-faq .header {
+    font-size: 2rem;
+    font-weight: 600;
+}
+.custom-faq .sub-header {
+    font-style: italic;
+}
+.custom-faq button {
+    width: 100%;
+}
+.custom-faq .area {
+    border: 1px solid rgb(24, 24, 24);
+    font-size: 1rem;
+    box-shadow: 0px 10px 50px rgb(41, 41, 41);
+}
+.custom-faq .area button {
+    text-align: left;
+    color: white;
+    background-color: rgb(32, 32, 32);
+    border-radius: 0px;
+    border: 1px solid rgb(29, 29, 29);
+    transition: 0.3s;
+    font-size: 17px;
+}
+.custom-faq .area button:hover {
+    background-color: #313131;
+}
+.custom-faq .area button:focus {
+    background-color: #3a3a3a;
+}
+.custom-faq-content p{
+    font-size: 15px;
+    text-align: left;
+    margin: 0;
+}
+.btn.btn-primary.custom {
+    margin: 0 !important
+}
+.input-group-text {
+    padding-right: 0.5rem !important;
+}
+.sign-up-link{
+    margin-top: 1rem;
+    color:rgb(184, 184, 184);
+}
+.sign-up-link a {
+    font-size: 17px;
+}
