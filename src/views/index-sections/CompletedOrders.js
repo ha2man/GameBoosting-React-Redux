@@ -1,82 +1,69 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import classnames from 'classnames';
 import {
     Container,
     Row,
     Col,
+    Spinner,
 } from 'reactstrap'
 import OrderBlock from 'components/Common/OrderBlock';
+import { getOrders } from 'app/slices/order';
+function CompletedOrders({mode}) {
+    const { isLoading, orders } = useSelector(state => state.order);
+    const [ limit, setLimit ] = useState(1);
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
 
-function CompletedOrders(props) {
-    const [ count, setCount ] = useState(4);
+    useEffect(() => {
+        dispatch(getOrders({limit}));
+    }, [limit])
+    
+    
+    const handleView = () => {
+        if (mode === "all" && orders.length >= limit*4) {
+            setLimit(limit+1);
+        }
+        else {
+            navigate("/order");
+        }
+    }
     return (
         <div className={classnames("section section-order",{
-                "bg-order" : props.mode==="all"
+                "bg-order" : mode==="all"
             })}>
                 <Container fluid="xl">
                     <div className={classnames("header", {
-                        "my-5":props.mode === "all"
+                        "my-5":mode === "all"
                     })}>
-                        Completed{props.mode==="all"?" & Ongoing":""} Orders
+                        Completed{mode==="all"?" & Ongoing":""} Orders
                     </div>
-                    <Row xs="1" sm="2" md="4">
-                        <Col>
-                            <OrderBlock type="rocket-league" title="Game" data="Rocket League" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="diamond3" title="From" data="Diamond III" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="champion1" title="To" data="Champion I" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="date" title="Date" data="22/03/2023" />
-                        </Col>
-                        
-                    </Row>
-                    <Row xs="1" sm="2" md="4">
-                        <Col>
-                            <OrderBlock type="rocket-league" title="Game" data="Rocket League" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="diamond3" title="From" data="Diamond III" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="champion1" title="To" data="Champion I" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="date" title="Date" data="22/03/2023" />
-                        </Col>
-                    </Row>
-                    <Row xs="1" sm="2" md="4">
-                        <Col>
-                            <OrderBlock type="rocket-league" title="Game" data="Rocket League" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="diamond3" title="From" data="Diamond III" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="champion1" title="To" data="Champion I" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="date" title="Date" data="22/03/2023" />
-                        </Col>
-                    </Row>
-                    <Row xs="1" sm="2" md="4">
-                        <Col>
-                            <OrderBlock type="rocket-league" title="Game" data="Rocket League" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="diamond3" title="From" data="Diamond III" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="champion1" title="To" data="Champion I" />
-                        </Col>
-                        <Col>
-                            <OrderBlock type="date" title="Date" data="22/03/2023" />
-                        </Col>
-                    </Row>
-                    <button className="my-btn-black mt-5">
+                    { isLoading ? <div style={{marginTop:"calc(10vh)", marginBottom:"calc(10vh)", textAlign:"center"}}><Spinner style={{ color:"#ffffff", width: '6rem', height: '6rem' }} children={false} /></div> :
+                            orders &&
+                            orders
+                                .filter(item => (mode!=="all"?(item.state==="Completed"&&item.game===mode):item))
+                                .slice(0,mode==="all"?(orders.length<limit*4?orders.length:limit*4):4)
+                                .map(item => {
+                                return (
+                                    <Row xs="1" md="2" sm="4">
+                                        <Col>
+                                            <OrderBlock game={item.game} url={item.game} title="Game" data={item.game==="rocket"?"Rocket League":"League of Legends"} />
+                                        </Col>
+                                        <Col>
+                                            <OrderBlock game={item.game} url={item.current.url} title="From" data={item.current.name} />
+                                        </Col>
+                                        <Col>
+                                            <OrderBlock game={item.game} url={item.desired.url} title="To" data={item.desired.name} />
+                                        </Col>
+                                        <Col>
+                                            <OrderBlock game={item.game} url="date" title="Date" data={item.date.slice(0, 10)} />
+                                        </Col>
+                                    </Row>
+                                )
+                            })
+                    }
+                    <button className="my-btn-black mt-5" onClick={handleView}>
                         View More
                     </button>
                 </Container>

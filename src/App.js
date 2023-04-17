@@ -1,7 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter as Router, Routes, Route, Navigate, useLocation} from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 
 // styles for this kit
 import "assets/css/custom.css";
@@ -17,6 +15,7 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 import Index from "views/Index";
 import Order from "views/Order";
 import Login from "views/Login";
+import Term from "views/Term";
 import Signup from 'views/Signup';
 import Profile from 'views/Profile';
 
@@ -41,11 +40,12 @@ function App() {
           <Routes>
             <Route path="/" element={<Navigate to='/rocket-league-boosting' />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/terms" element={<Term />} />
             <Route path="/signup" element={<Signup />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/order" element={<Order />} />
-            <Route path="/rocket-league-boosting" element={<Index />} />
-            <Route path="/league-legend-boosting" element={<Index />} />
+            {/* <Route path="/profile" element={<Profile />} /> */}
+            <Route path="/order" element={<Order mode="all" />} />
+            <Route path="/rocket-league-boosting" element={<Index game="rocket" />} />
+            <Route path="/league-legend-boosting" element={<Index game="legend" />} />
           </Routes>
         </div>
         <DarkFooter />

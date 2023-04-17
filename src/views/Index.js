@@ -9,20 +9,18 @@ import BoostingMenu from './index-sections/BoostingMenu.js';
 import BoostingContent from "./index-sections/BoostingContent.js";
 import Advertise from "./index-sections/Advertise.js";
 import CompletedOrders from "./index-sections/CompletedOrders.js";
-import Reviews from "./index-sections/Reviews.js";
 import FAQ from './index-sections/FAQ.js';
 import ContactUs from "./index-sections/ContactUs.js";
 
-function Index() {
+function Index({game}) {
   return (
     <>
-      <IndexHeader />
-      <BoostingMenu />
-      <BoostingContent />
-      <Advertise />
-      <CompletedOrders />
-      <Reviews />
-      <FAQ />
+      <IndexHeader game={game} />
+      <BoostingMenu game={game} />
+      <BoostingContent game={game} />
+      <Advertise game={game} />
+      <CompletedOrders mode={game} />
+      <FAQ game={game} />
       <ContactUs />
     </>
   );

@@ -1,16 +1,32 @@
 import React from 'react'
-function BoostingMenu() {
-    const img_url = "./images/rank/";
+import { useDispatch, useSelector } from 'react-redux';
+import classnames from 'classnames';
+import { setBoost } from 'app/slices/order';
+import { robot_boost, legend_boost } from './constants';
+function BoostingMenu({game}) {
+    const img_url = `./images/${game}_rank/`;
+    const { boostType } = useSelector(state => state.order);
+    const boosts = (game==="rocket"?robot_boost:legend_boost);
+    const dispatch = useDispatch();
+    
+    const onBoost = (id) => {
+        dispatch(setBoost(id));
+    }
     return (
         <div className="section-boost">
             <div className='boost-menu d-flex justify-content-center'>
-                <div className="boost-item"><img src={img_url+"gc2.png"} alt="1" /><p>Rank Boosting</p></div>
-                <div className="boost-item"><img src={img_url+"unranked.png"} alt="1" /><p>Placement matches</p></div>
-                <div className="boost-item"><img src={img_url+"diamond2.png"} alt="1" /><p>Seasonal rewards</p></div>
-                <div className="boost-item"><img src={img_url+"tournamentwin.png"} alt="1" /><p>Tournament wins</p></div>
-                <div className="boost-item"><img src={img_url+"champion1.png"} alt="1" /><p>Win boosting</p></div>
-                <div className="boost-item"><img src={img_url+"ssl.png"} alt="1" /><p>Coaching</p></div>
-                <div className="boost-item"><img src={img_url+"champion2.png"} alt="1" /><p>Play per hour</p></div>
+                {
+                    boosts.map(item => (
+                        <div key={item.id} className={classnames(
+                            "boost-item",
+                            {
+                                "rocket":game==="rocket",
+                                "legend":game==="legend",
+                                "active":boostType===item.id
+                            }
+                        )} onClick={() => onBoost(item.id)}><img src={img_url+item.url+".png"} alt={item.url} /><p>{item.name}</p></div>
+                    ))
+                }
             </div>
         </div>
     )

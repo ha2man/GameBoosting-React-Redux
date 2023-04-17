@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import { useDispatch, useSelector } from "react-redux";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import {
     Button,
     Card,
@@ -11,14 +10,12 @@ import {
     CardTitle,
     Form,
     Input,
-    InputGroupAddon,
     InputGroupText,
     InputGroup,
     Container,
     Row,
     Col,
     Spinner,
-    Alert
 } from "reactstrap";
 
 import { login } from "app/slices/auth";
@@ -29,7 +26,6 @@ function Login() {
     const [emailFocus, setEmailFocus] = useState(false);
     const [passFocus, setPassFocus] = useState(false);
     const { isLoggedIn } = useSelector((state) => state.auth);
-    const { message } = useSelector((state) => state.message);
     const { isLoading } = useSelector((state) => state.auth);
     const { error } = useSelector((state) => state.auth);
     let navigate = useNavigate();
@@ -40,20 +36,20 @@ function Login() {
             navigate("/rocket-league-boosting");
             window.location.reload();
         }
-    }, [isLoading, error])
+    }, [isLoading, error, isLoggedIn, navigate])
 
     const handleLogin = () => {
         dispatch(login({ email, password }))
     }
 
-    if (isLoggedIn && !isLoading) {
-        //return <Navigate to="/rocket-league-boosting" />;
-    }
+    // if (isLoggedIn && !isLoading) {
+    //     //return <Navigate to="/rocket-league-boosting" />;
+    // }
 
     return (
         <div className="section section-login">
          {
-            isLoading ?  <div style={{marginTop:"calc(30vh)", textAlign:"center"}}><Spinner style={{ color:"#ffffff", width: '6rem', height: '6rem' }} children={false} /></div>:
+            isLoading ?  <div style={{marginTop:"calc(30vh)", textAlign:"center"}}><Spinner style={{ color:"#ffffff", width: '6rem', height: '6rem' }} /></div>:
             <Container fluid="xl">
                 <Row>
                     <Col>
@@ -99,11 +95,11 @@ function Login() {
                                     "no-border" + (emailFocus ? " input-group-focus" : "")
                                     }
                                 >
-                                    <InputGroupAddon addonType="prepend">
+                                    <div className="input-group-append">
                                     <InputGroupText>
                                         <i className="now-ui-icons ui-1_email-85"></i>
                                     </InputGroupText>
-                                    </InputGroupAddon>
+                                    </div>
                                     <Input
                                     placeholder="Email..."
                                     type="text"
@@ -120,11 +116,11 @@ function Login() {
                                     "no-border" + (passFocus ? " input-group-focus" : "")
                                     }
                                 >
-                                    <InputGroupAddon addonType="prepend">
+                                    <div className="input-group-append">
                                     <InputGroupText>
                                         <i className="now-ui-icons text_caps-small"></i>
                                     </InputGroupText>
-                                    </InputGroupAddon>
+                                    </div>
                                     <Input
                                     placeholder="Password..."
                                     type="password"
@@ -140,13 +136,6 @@ function Login() {
                                 <CardFooter className="text-center">
                                     <button type="submit" className="my-btn-black">Login</button>
                                 </CardFooter>
-                                {message && (
-                                    <div className="form-group">
-                                    <div className="alert alert-danger" role="alert">
-                                        {message}
-                                    </div>
-                                    </div>
-                                )}
                             </Form>
                         </Card>
                         <div className="sign-up-link">
@@ -157,8 +146,12 @@ function Login() {
                     <Col>
                         <div className="description">
                             <h2>How to get login data?</h2>
-                            <p>
-                                The Login feature is only available if you have purchased a boost / account on our website. The credentials you have put in at the checkout are valid to login. After you log in you will be redirected to your dashboard where you will see your account details or boosting details. We are constantly working to improve the dashboard.
+                            <p style={{textAlign: "justify"}}>
+                            Thank you for considering our boost/account purchase on our website. To enjoy the convenience of our Login feature, please note that it is exclusively available to those who have purchased a boost or an account from us.
+                            <br />
+                            Once you have completed a purchase you will be allowed to register in our web site. Upon successful registering, you will be redirected to your personalized dashboard, where you can view your account details or boosting progress.
+                            <br />
+                            As part of our commitment to providing the best experience for our customers, we are constantly working to improve our dashboard, ensuring that you have access to the most up-to-date and accurate information. We appreciate your support and look forward to serving you on our platform.
                             </p>
                         </div>
                     </Col>

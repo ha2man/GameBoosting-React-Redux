@@ -17,7 +17,7 @@ const headerNames = [
     img: "/images/background-wallpaper/2.jpg",
   },
 ];
-function IndexHeader() {
+function IndexHeader({game}) {
   let pageHeader = React.createRef();
   const currentId = headerNames.findIndex(item => item.url==window.location.pathname);
 
@@ -40,6 +40,7 @@ function IndexHeader() {
     <div
           className="page-header-image"
           style={{
+            backgroundPosition: (game=="rocket"?"left":""),
             backgroundSize: "cover",
             backgroundImage: `url(${headerNames[currentId].img})`,
           }}
@@ -51,7 +52,7 @@ function IndexHeader() {
             <h1 className="h1-seo">
               {headerNames[currentId].name}
             </h1>
-            <p>Select from Rank boosting and 7+ services.</p>
+            <p>Select from Rank boosting and {game=="rocket"?7:5}+ services.</p>
           </div>
         <canvas id="canvas" width="1242" height="400" style={{width: '100%', height: '100%'}}></canvas>
       </div>

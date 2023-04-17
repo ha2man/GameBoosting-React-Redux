@@ -8,11 +8,8 @@ import {
     CardTitle,
     Form,
     Input,
-    InputGroupAddon,
     InputGroupText,
     InputGroup,
-    Container,
-    Row
 } from "reactstrap";
 
 function ContactUs() {
@@ -20,6 +17,10 @@ function ContactUs() {
     const [lastFocus, setLastFocus] = React.useState(false);
     const [emailFocus, setEmailFocus] = React.useState(false);
     const [msgFocus, setMsgFocus] = React.useState(false);
+
+    const onContact = () => {
+        console.log("contact");
+    }
     return (
         <div className="section section-contact">
             <div className="container">
@@ -64,11 +65,11 @@ function ContactUs() {
                                 "no-border" + (firstFocus ? " input-group-focus" : "")
                                 }
                             >
-                                <InputGroupAddon addonType="prepend">
+                                <div className="input-group-append">
                                 <InputGroupText>
                                     <i className="now-ui-icons users_circle-08"></i>
                                 </InputGroupText>
-                                </InputGroupAddon>
+                                </div>
                                 <Input
                                 placeholder="Your Name..."
                                 type="text"
@@ -82,11 +83,11 @@ function ContactUs() {
                                 "no-border" + (lastFocus ? " input-group-focus" : "")
                                 }
                             >
-                                <InputGroupAddon addonType="prepend">
+                                <div className="input-group-append">
                                 <InputGroupText>
                                     <i className="now-ui-icons tech_controller-modern"></i>
                                 </InputGroupText>
-                                </InputGroupAddon>
+                                </div>
                                 <Input
                                 placeholder="Discord..."
                                 type="text"
@@ -99,11 +100,11 @@ function ContactUs() {
                                 "no-border" + (emailFocus ? " input-group-focus" : "")
                                 }
                             >
-                                <InputGroupAddon addonType="prepend">
+                                <div className="input-group-append">
                                 <InputGroupText>
                                     <i className="now-ui-icons ui-1_email-85"></i>
                                 </InputGroupText>
-                                </InputGroupAddon>
+                                </div>
                                 <Input
                                 placeholder="Email..."
                                 type="text"
@@ -117,11 +118,11 @@ function ContactUs() {
                                 "no-border" + (msgFocus ? " input-group-focus" : "")
                                 }
                             >
-                                <InputGroupAddon addonType="prepend">
+                                <div className="input-group-append">
                                 <InputGroupText>
                                     <i className="now-ui-icons text_caps-small"></i>
                                 </InputGroupText>
-                                </InputGroupAddon>
+                                </div>
                                 <Input
                                 placeholder="Message..."
                                 type="textarea"
@@ -133,7 +134,7 @@ function ContactUs() {
                             </InputGroup>
                             </CardBody>
                             <CardFooter className="text-center">
-                                <button className="my-btn-black">Send Message</button>
+                                <button className="my-btn-black" onClick={onContact}>Send Message</button>
                             </CardFooter>
                         </Form>
                     </Card>

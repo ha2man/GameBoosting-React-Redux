@@ -15,22 +15,22 @@ const teamMembers = [
     {
         name: 'Lucas Andersson',
         content: 'one of the best boosting services. Professional website, no trust issues and fast delivery. Can recommend!',
-        date: 'Jan 6,2021',
+        date: 'Feb 9,2023',
     },
     {
-        name: 'Thibzee',
-        content: 'This is awesome I’m platinum 3 now and this service is just insane',
-        date: 'Jan 20, 2021',
+        name: 'William Nyberg',
+        content: 'I got in contact with them, ordered, and they got my rank quickly. Will come back next season if I need anything.',
+        date: 'Jan 23, 2023',
     },
     {
-        name: 'Thibzee',
-        content: 'This is awesome I’m platinum 3 now and this service is just insane',
-        date: 'Jan 20, 2021',
+        name: 'Larry Norman',
+        content: 'Outstanding service, Highly recommended and will be back in the future!',
+        date: 'Oct 16, 2022',
     },
     {
-        name: 'Thibzee',
-        content: 'This is awesome I’m platinum 3 now and this service is just insane',
-        date: 'Jan 20, 2021',
+        name: 'TrickPig',
+        content: 'The Booster was very friendly and affordable. My request was completed very fast and I really liked it.',
+        date: 'Mar 7, 2023',
     },
   ]
 function Reviews() {

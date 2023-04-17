@@ -17,17 +17,17 @@ window.onload= function() {
     this.border = false;
     //particle radius min/max
     this.minRadius = 0.5; 
-    this.maxRadius = 5;
+    this.maxRadius = 8;
     //particle opacity min/max
     this.minOpacity = .005;
-    this.maxOpacity = .8;
+    this.maxOpacity = .7;
     //particle speed min/max
     this.minSpeed = .01;
-    this.maxSpeed = 2.5;
+    this.maxSpeed = 1.0;
     //frames per second 
     this.fps = 60;
     //number of particles
-    this.numParticles = 200;
+    this.numParticles = 170;
     //required canvas variables
     this.canvas = document.getElementById('canvas');
     this.ctx = this.canvas.getContext('2d');

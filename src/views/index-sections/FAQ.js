@@ -4,13 +4,13 @@ import React from 'react'
 const faqList = [
     {
         id:"1",
-        title:"What is Phrixboosting?",
-        content:"Phrixboosting is known as a trusted game boosting service for Rocket League and Valorant. We always provide highest customer satisfaction, and help with any questions related to the game, boosting or ranking up. Our services are available worldwide on any platform, at any time.",
+        title:"What is RelatedBoosting?",
+        content:"At our website, we've established ourselves as a reliable and trustworthy game boosting service that specializes in Rocket League and League of Legends. Our number one priority is customer satisfaction, and we strive to provide top-notch support to assist you with any questions or concerns related to the game, boosting, or ranking up. No matter where you are in the world or what platform you're playing on, our services are available to you 24/7, ensuring that you can get the boost you need at any time.",
     },
     {
         id:"2",
         title:"What happens after I make a purchase?",
-        content:`After you have purchased, you will be able to login into the "members area". To login you will need do use the credentials you have entered in at the checkout.`,
+        content:`After you finalise the purchase, you can contact us through Discord with the proof of payment and we will start the process as soon as possible.`,
     },
     {
         id:"3",
@@ -20,17 +20,17 @@ const faqList = [
     {
         id:"4",
         title:"What happens after the booster logs into my account?",
-        content:`After our booster has logged into your account, he will send you screenshots of your settings, in case you forgot to take some before, and then start the boost.`,
+        content:`Once our booster gains access to your account, they will promptly send you screenshots of your current settings, just in case you forgot to capture them beforehand. This way, you can have a record of your original settings. Following that, our booster will initiate the boost and work diligently to achieve your desired results.`,
     },
     {
         id:"5",
         title:"Are you capable of boosting to the top rank?",
-        content:`Yes, all of our boosters are verified top level players, which can reach the highest rank every time. That means they are capable of getting you to any rank you desire. Some of them are currently top 100.`,
+        content:`Rest assured, all our boosters are highly skilled and verified top-level players. They have a proven track record of reaching the highest ranks consistently. This means they are more than capable of helping you achieve your desired rank, no matter how high it may be. In fact, some of our boosters are currently ranked in the top 100, showcasing their exceptional expertise and proficiency in the game. You can trust in their abilities to provide you with top-quality boosting services.`,
     },
     {
         id:"6",
         title:"Do you provide any refunds?",
-        content:`We do guarantee refunds. In case you want to cancel the order before the boost has started, we will refund 100% of your money. In case we have started the boost already, we will refund you the price equal to what we haven't boosted yet.`,
+        content:`We stand behind our service with a refund policy. If you wish to cancel your order before the boost has commenced, we will provide a 100% refund of your payment. If the boost has already begun, we will calculate the refund amount based on the progress made and refund you the remaining portion that has not been completed. We value your satisfaction and want to ensure that you are completely satisfied with our service, and our refund policy reflects our commitment to your satisfaction.`,
     },
 ]
 

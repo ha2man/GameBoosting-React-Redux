@@ -15,8 +15,8 @@ import {
 import EventBus from "app/common/EventBus";
 
 function IndexNavbar() {
-  const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
-  const [collapseOpen, setCollapseOpen] = React.useState(false);
+  const [navbarColor, setNavbarColor] = useState("navbar-transparent");
+  const [collapseOpen, setCollapseOpen] = useState(false);
   const { user: currentUser } = useSelector((state) => state.auth);
 
   const dispatch = useDispatch();
@@ -63,19 +63,19 @@ function IndexNavbar() {
         />
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} expand="lg" style={{backgroundColor:"rgba(30,30,30,0.95)"}}>
-        <Container fluid="xl">
+        <Container fluid="xl" className="d-flex">
           <div className="navbar-translate">
             <NavbarBrand
-              href="https://demos.creative-tim.com/now-ui-kit-react/#/index?ref=nukr-index-navbar"
+              href="#"
               target="_blank"
               id="navbar-brand"
             >
               <img src="./images/logo.png" alt="logo" className="custom-logo"/>
-              <span className="ml-3">League of Legends</span>
+              <span className="ml-3">RelatedBoost</span>
             </NavbarBrand>
-            <UncontrolledTooltip target="#navbar-brand">
-              Designed by Invision. Coded by Creative Tim
-            </UncontrolledTooltip>
+            {/* <UncontrolledTooltip target="#navbar-brand">
+              Designed by Tomas Jinn. Coded by Tomas Jinn
+            </UncontrolledTooltip> */}
             <button
               className="navbar-toggler navbar-toggler"
               onClick={() => {
@@ -115,6 +115,13 @@ function IndexNavbar() {
                   href="/order"
                 >
                   <p>Orders</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
+                  href="/terms"
+                >
+                  <p>Terms</p>
                 </NavLink>
               </NavItem>
               <NavItem>

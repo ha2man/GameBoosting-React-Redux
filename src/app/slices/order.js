@@ -4,31 +4,44 @@ import OrderService from "../services/order.service";
 
 export const createOrder = createAsyncThunk(
     "order/create",
-    async ({ name, email, discord, price }, thunkAPI) => {
+    async (data, thunkAPI) => {
       try {
-        const response = await OrderService.createOrder(thunkAPI.dispatch, name, email, discord, price);
+        const response = await OrderService.createOrder(thunkAPI.dispatch, data);
         return response.data;
       } catch (error) {
-        const message =
-          (error.response &&
-            error.response.data &&
-            error.response.data.message) ||
-          error.message ||
-          error.toString();
+        return thunkAPI.rejectWithValue();
+      }
+    }
+);
+export const getOrders = createAsyncThunk(
+    "order",
+    async ({limit}, thunkAPI) => {
+      try {
+        const response = await OrderService.getOrders(thunkAPI.dispatch, {limit});
+        return response.data;
+      } catch (error) {
         return thunkAPI.rejectWithValue();
       }
     }
 );
 
 const initialState = {
+    orders: [],
     isLoading: false,
     error: "",
+    boostType: 1,
 };
 
 const orderSlice = createSlice({
   name: "order",
   initialState,
   reducers: {
+    setOrders: (state, action) => {
+      state.orders = action.payload;
+    },
+    setBoost: (state, action) => {
+      state.boostType = action.payload;
+    },
     setLoading: (state, action) => {
       state.isLoading = action.payload;
     },
@@ -40,5 +53,5 @@ const orderSlice = createSlice({
 
 const { reducer, actions } = orderSlice;
 
-export const { setLoading, setError } = actions
+export const { setOrders,setBoost, setLoading, setError } = actions
 export default reducer;

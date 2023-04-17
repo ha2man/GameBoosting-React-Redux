@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from 'react-router-dom'
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
+import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import {
     Button,
@@ -11,7 +10,6 @@ import {
     CardTitle,
     Form,
     Input,
-    InputGroupAddon,
     InputGroupText,
     InputGroup,
     Container,
@@ -31,6 +29,7 @@ function SignUp() {
     const [emailFocus, setEmailFocus] = useState(false);
     const [passFocus, setPassFocus] = useState(false);
     const [disFocus, setDisFocus] = useState(false);
+    const [ready, setReady] = useState(false);
     const { isLoading } = useSelector((state) => state.auth);
     const { error } = useSelector((state) => state.auth);
     const navigate = useNavigate();
@@ -38,18 +37,21 @@ function SignUp() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        if (error?.length === 0 && !isLoading && name && email && discord && password) {
+        if (error?.length === 0 && !isLoading && name && email && password) {
             navigate("/login");
         }
     }, [isLoading, error])
     const handleSubmit = (e) => {
         e.preventDefault();
-        if (discord.match(/([\w.%+-]+)#([0-9]{4})/g))
-            dispatch(register({ name, email, discord, password }))
-        else {
-            dispatch(setError("Invalid Discord Type!!!"));
-            setDisFocus(true);
+        
+        if (discord) {
+            if (!discord.match(/([\w.%+-]+)#([0-9]{4})/g)) {
+                dispatch(setError("Invalid Discord Type!!!"));
+                setDisFocus(true);
+                return;
+            }
         }
+        dispatch(register({ name, email, discord, password }))
     }
     return (
         <div className="section section-login">
@@ -99,11 +101,11 @@ function SignUp() {
                                     "no-border" + (nameFocus ? " input-group-focus" : "")
                                     }
                                 >
-                                    <InputGroupAddon addonType="prepend">
+                                    <div className="input-group-append">
                                     <InputGroupText>
                                         <i className="now-ui-icons users_circle-08"></i>
                                     </InputGroupText>
-                                    </InputGroupAddon>
+                                    </div>
                                     <Input
                                     placeholder="Your Name..."
                                     type="text"
@@ -120,11 +122,11 @@ function SignUp() {
                                     "no-border" + (emailFocus ? " input-group-focus" : "")
                                     }
                                 >
-                                    <InputGroupAddon addonType="prepend">
+                                    <div className="input-group-append">
                                     <InputGroupText>
                                         <i className="now-ui-icons ui-1_email-85"></i>
                                     </InputGroupText>
-                                    </InputGroupAddon>
+                                    </div>
                                     <Input
                                     placeholder="Email..."
                                     type="email"
@@ -141,11 +143,11 @@ function SignUp() {
                                     "no-border" + (disFocus ? " input-group-focus" : "")
                                     }
                                 >
-                                    <InputGroupAddon addonType="prepend">
+                                    <div className="input-group-append">
                                     <InputGroupText>
                                         <i className="now-ui-icons tech_controller-modern"></i>
                                     </InputGroupText>
-                                    </InputGroupAddon>
+                                    </div>
                                     <Input
                                     placeholder="Discord ID..."
                                     type="text"
@@ -161,11 +163,11 @@ function SignUp() {
                                     "no-border" + (passFocus ? " input-group-focus" : "")
                                     }
                                 >
-                                    <InputGroupAddon addonType="prepend">
+                                    <div className="input-group-append">
                                     <InputGroupText>
                                         <i className="now-ui-icons text_caps-small"></i>
                                     </InputGroupText>
-                                    </InputGroupAddon>
+                                    </div>
                                     <Input
                                     placeholder="Password..."
                                     type="password"
@@ -177,9 +179,16 @@ function SignUp() {
                                     required
                                     ></Input>
                                 </InputGroup>
+                                <div className="d-flex justify-content-center mt-3">
+                                    <input type="checkbox" checked={ready} onClick={() => setReady(!ready)} style={{width:"16px", height:"16px"}} />
+                                    <span style={{color:"#cccccc", marginLeft:"0.3rem",fontSize:"15px",lineHeight:"1.0rem"}}>
+                                        I agree with the terms of use. To check it {" "}
+                                        <a style={{color:"#f96332"}} href="/terms">See here</a>
+                                    </span>
+                                </div>
                                 </CardBody>
-                                <CardFooter className="text-center">
-                                    <button type="submit" className="my-btn-black">Sign Up</button>
+                                <CardFooter className="text-center pt-0">
+                                    <button disabled={!ready} type="submit" className="my-btn-black">Sign Up</button>
                                 </CardFooter>
                             </Form>
                         </Card>
