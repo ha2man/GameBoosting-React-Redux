@@ -25,6 +25,10 @@ import ButtonWrapper from "components/Common/PayPalBtn";
 const clientID = "ATEZMdnwrx8NTsHdWOYJVENfLCph1ib7QDf2OzavEKWVN7Z5DvHYDCdk8rKrsA7gsTiJ6JChTQBw_DrM";
 function BoostingContent({game}) {
     const [modal, setModal] = useState(false);
+    const [guserdata, setGUserdata] = useState("");
+    const [gpassword, setGPassword] = useState("");
+    const [eye, setEye] = useState(false);
+
     const [platform, setPlatform] = useState(1);
     const [gamemode, setGamemode] = useState(1);
     const [server, setServer] = useState(1);
@@ -295,6 +299,10 @@ function BoostingContent({game}) {
                     name: desired_list[desired].name
                 },
                 price:price.total,
+                account: {
+                    userdata: guserdata,
+                    password: gpassword,
+                },
                 mainOption: mainOption,
                 orderOption: orderOption,
             };
@@ -327,28 +335,29 @@ function BoostingContent({game}) {
                     <span style={{padding:"0 0.2rem",fontSize:"22px", fontWeight:"600", color:"#ebb434"}}>{desired>=desired_list.length?"":desired_list[desired].name}</span>
                 </div>
                 <ModalBody style={{padding:"2rem 4rem 0rem 4rem", backgroundColor:"#252525"}}>
-                    {/* <div className="mb-2">
-                        <i className="fas fa-shopping-cart" style={{color:basicColor}}></i>
-                        <h3 style={{display:"inline"}}>User Details</h3>
-                    </div>
-                    <Row>
-                        <Col>
-                            <p>Email</p>
-                            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="email..." />
-                        </Col>
-                        <Col>
-                            <p>Password (if you're not registered)</p>
-                            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="password..." />
-                        </Col>
-                        <Col>
-                            <p>Discord (optional)</p>
-                            <input type="text" value={discord} onChange={(e) => setDiscord(e.target.value)} placeholder="discord..." />
-                        </Col>
-                        <Col>
-                            <p>Comments (optional)</p>
-                            <input type="text" value={comment} onChange={(e) => setComment(e.target.value)} placeholder="comments..." />
-                        </Col>
-                    </Row> */}
+                    {
+                        !orderOption.play ?
+                        <div>
+                            <div className="mb-2">
+                                <i className="fas fa-shopping-cart" style={{color:basicColor}}></i>
+                                <h3 style={{display:"inline"}}>Game Account Details</h3>
+                            </div>
+                            <Row>
+                                <Col>
+                                    <p>Username{game==="rocket"?"/Email":""}</p>
+                                    <input type="text" value={guserdata} onChange={(e) => setGUserdata(e.target.value)} placeholder="userdata..." />
+                                </Col>
+                                <Col>
+                                    <div className="d-flex">
+                                        <p>Password</p>
+                                        <span onClick={(e) => setEye(!eye)} className="password-eye"><i className="fas fa-eye pl-2" style={{opacity:eye?"1":"0.2", fontSize:"1rem", paddingTop:"0.9rem"}}></i></span>
+                                    </div>
+                                    <input type={eye?"text":"password"} value={gpassword} onChange={(e) => setGPassword(e.target.value)} placeholder="password..." />
+                                </Col>
+                            </Row>
+                        </div> : 
+                        <div></div>
+                    }
                     <div className="pt-4">
                         <i className="fas fa-wallet" style={{color:basicColor}}></i>
                         <h3 style={{display:"inline"}}>Payment</h3>
@@ -366,9 +375,9 @@ function BoostingContent({game}) {
                             <span style={{fontSize:"30px", color:"#ebb434"}}>€{price.total}</span>
                         </div>
                         <div className="flex-fill">
-                            {/* <Button onClick={onSubmit} className="paypal-btn mb-3">
+                            <Button onClick={onSubmit} className="paypal-btn mb-3">
                                 <span style={{color:"rgba(54, 95, 219)"}}>Pay</span><span style={{color:"rgba(54, 135, 219)"}}>Pal</span>
-                            </Button> */}
+                            </Button>
                             <span style={{color:"#a4a4a4"}}>Please don't close the paypal browser when it is loading</span>
                             <ButtonWrapper
                                 amount={price.total}

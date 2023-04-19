@@ -692,3 +692,6 @@ footer.footer {
     box-shadow: initial !important;
     opacity: 1 !important;
 }
+.password-eye:hover {
+    opacity: 0.8;
+}
