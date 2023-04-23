@@ -60,7 +60,7 @@ function Login() {
                                 <CardTitle className="title-up" tag="h3">
                                     Login
                                 </CardTitle>
-                                <div className="social-line">
+                                {/* <div className="social-line">
                                     <Button
                                     className="btn-neutral btn-icon btn-round"
                                     color="facebook"
@@ -86,7 +86,7 @@ function Login() {
                                     >
                                     <i className="fab fa-google-plus"></i>
                                     </Button>
-                                </div>
+                                </div> */}
                                 </CardHeader>
                                 <CardBody>
                                     <p className="text-danger">{error}</p>

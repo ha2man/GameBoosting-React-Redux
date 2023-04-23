@@ -22,13 +22,12 @@ import { robot_boost, legend_boost,
         platformList, gamemodeList, serverList, hours } from "./constants";
 import ButtonWrapper from "components/Common/PayPalBtn";
 
-const clientID = "ATEZMdnwrx8NTsHdWOYJVENfLCph1ib7QDf2OzavEKWVN7Z5DvHYDCdk8rKrsA7gsTiJ6JChTQBw_DrM";
+const clientID = "AbYSppYYoZ7GJx4R2VMituc3pvMTNvFvJvnxRIRdbHLZEeNrEnzI3sf5I_wRnruSY87_DkQMBWrxt4ON";
 function BoostingContent({game}) {
     const [modal, setModal] = useState(false);
     const [guserdata, setGUserdata] = useState("");
     const [gpassword, setGPassword] = useState("");
     const [eye, setEye] = useState(false);
-
     const [platform, setPlatform] = useState(1);
     const [gamemode, setGamemode] = useState(1);
     const [server, setServer] = useState(1);
@@ -86,7 +85,9 @@ function BoostingContent({game}) {
                 if (desired === 1) discount_t = 0.05;
                 else if (desired > 1) discount_t = 0.1;
             }
-            plus_t += gamemodeList.find(item => item.value == gamemode).plus;
+            if (boostType !== 4 && boostType !== 6) {
+                plus_t += gamemodeList.find(item => item.value == gamemode).plus;
+            }
             plus_t += orderOption.play?0.4:0;
             plus_t += orderOption.live?0.2:0;
             plus_t += orderOption.priority?0.15:0;
@@ -252,6 +253,8 @@ function BoostingContent({game}) {
         loadList();
         setCurrent(0);
         setDesired(0);
+        setGUserdata("");
+        setGPassword("");
         setorderOption({play:false, live:false, priority:false,
             offline:false, character:false, stream:false,primium:false,high:false,game:false});
         checkPrice();
@@ -280,7 +283,7 @@ function BoostingContent({game}) {
         if (currentUser) {
             const mainOption = {
                 platform:(game==="rocket")?platformList[platform-1].name:null,
-                gamemode:(game==="rocket")?gamemodeList[gamemode-1].name:null,
+                gamemode:(game==="rocket")?(boostType!==6?gamemodeList[gamemode-1].name:gamemodeList[gamemode-1].name2):null,
                 server:(game==="legend")?serverList[server-1].name:null,
             }
             const desired_url = (game==="rocket"&&boostType>2&&boostType<6 || game=="legend"&&(boostType%2===0))
@@ -344,7 +347,7 @@ function BoostingContent({game}) {
                             </div>
                             <Row>
                                 <Col>
-                                    <p>Username{game==="rocket"?"/Email":""}</p>
+                                    <p>Username{game==="rocket"?" / Email":""}</p>
                                     <input type="text" value={guserdata} onChange={(e) => setGUserdata(e.target.value)} placeholder="userdata..." />
                                 </Col>
                                 <Col>
@@ -375,11 +378,17 @@ function BoostingContent({game}) {
                             <span style={{fontSize:"30px", color:"#ebb434"}}>€{price.total}</span>
                         </div>
                         <div className="flex-fill">
-                            <Button onClick={onSubmit} className="paypal-btn mb-3">
+                            {/* <Button onClick={onSubmit} className="paypal-btn mb-3">
                                 <span style={{color:"rgba(54, 95, 219)"}}>Pay</span><span style={{color:"rgba(54, 135, 219)"}}>Pal</span>
-                            </Button>
-                            <span style={{color:"#a4a4a4"}}>Please don't close the paypal browser when it is loading</span>
+                            </Button> */}
+                            <span style={{color:"#a4a4a4"}}>
+                            {(!orderOption.play && (guserdata==="" || gpassword==="")) ?
+                            "Please enter your game account detail" :
+                            "Please don't close the paypal browser when it is loading"
+                            }
+                            </span>
                             <ButtonWrapper
+                                disablity={(!orderOption.play && (guserdata==="" || gpassword===""))}
                                 amount={price.total}
                                 currency={"EUR"}
                                 showSpinner={false}
@@ -475,17 +484,20 @@ function BoostingContent({game}) {
                                             <div></div>
                                         </select>
                                     </div>
-                                    <div className="flex-fill">
-                                        <p>Select gamemode:</p>
-                                        <select value={gamemode} onChange={(e) => setGamemode(e.target.value)}>
-                                            {/* <option disabled value="default" style={{display: "none"}}>Select gamemode</option> */}
-                                            {
-                                                gamemodeList.map(item => (
-                                                    <option key={"gamemode"+item.value} value={item.value}>{item.name}</option>
-                                                ))
-                                            }
-                                        </select>
-                                    </div>
+                                    {
+                                        boostType!==4 ?
+                                        <div className="flex-fill">
+                                            <p>Select gamemode:</p>
+                                            <select value={gamemode} onChange={(e) => setGamemode(e.target.value)}>
+                                                {/* <option disabled value="default" style={{display: "none"}}>Select gamemode</option> */}
+                                                {
+                                                    gamemodeList.map(item => (
+                                                        <option key={"gamemode"+item.value} value={item.value}>{boostType!==6?item.name:item.name2}</option>
+                                                    ))
+                                                }
+                                            </select>
+                                        </div> : <div></div>
+                                    }
                                 </div>
                             }
                         </div>

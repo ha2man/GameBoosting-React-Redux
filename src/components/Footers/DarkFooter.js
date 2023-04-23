@@ -28,8 +28,8 @@ function DarkFooter() {
             <div className="flex-fill">
               <p>INFORMATION</p>
               <ul className="custom">
-                <li><a href="#">Discord</a></li>
-                <li><a href="#">Terms of use</a></li>
+                <li><a href="https://discord.com/invite/mt7Q6ENp" target="_blank">Discord</a></li>
+                <li><a href="/terms">Terms of use</a></li>
                 <li><a href="/login">Login</a></li>
               </ul>
             </div>

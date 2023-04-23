@@ -84,13 +84,13 @@ export const platformList = [
     { value:3, name:"XBOX" },
 ]
 export const gamemodeList = [
-    { value:1, plus:0.3, name: "3v3 (+30%)"},
-    { value:2, plus:0, name: "2v2 (Doubles)"},
-    { value:3, plus:0, name: "1v1 (+0%)"},
-    { value:4, plus:0.2, name: "Rumble (+20%)"},
-    { value:5, plus:0.4, name: "Dropshot (+40%)"},
-    { value:6, plus:0.2, name: "Hoops (+20%)"},
-    { value:7, plus:0.4, name: "Snowday (+40%)"},
+    { value:1, plus:0.3, name: "3v3 (+30%)", name2: "3v3"},
+    { value:2, plus:0, name: "2v2 (Doubles)", name2: "2v2"},
+    { value:3, plus:0, name: "1v1 (+0%)", name2: "1v1"},
+    { value:4, plus:0.2, name: "Rumble (+20%)", name2: "Rumble"},
+    { value:5, plus:0.4, name: "Dropshot (+40%)", name2: "Dropshot"},
+    { value:6, plus:0.2, name: "Hoops (+20%)", name2: "Hoops"},
+    { value:7, plus:0.4, name: "Snowday (+40%)", name2: "Snowday"},
 ]
 export const serverList = [
     { value:1, name:"North America" },

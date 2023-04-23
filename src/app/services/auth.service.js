@@ -1,7 +1,7 @@
 import axios from "axios";
 import { setLoading, setError } from 'app/slices/auth';
-const API_URL = "http://localhost:5000/api/auth/";
-// const API_URL = "https://533a-45-126-3-252.ngrok-free.app/api/auth/";
+// const API_URL = "http://localhost:5000/api/auth/";
+const API_URL = "https://relatedboost-g8pf2.ondigitalocean.app/api/auth/";
 const register = (dispatch, name, email, discord, password) => {
   dispatch(setError(""));
   dispatch(setLoading(true));

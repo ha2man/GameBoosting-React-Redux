@@ -6,7 +6,7 @@ import {
 
 const style = {"layout":"vertical"};
 
-const ButtonWrapper = ({ amount, currency, showSpinner, onSubmit }) => {
+const ButtonWrapper = ({ amount, currency, showSpinner, disablity, onSubmit }) => {
     // usePayPalScriptReducer can be use only inside children of PayPalScriptProviders
     // This is the main reason to wrap the PayPalButtons in a new component
     const [{ options, isPending }, dispatch] = usePayPalScriptReducer();
@@ -29,7 +29,7 @@ const ButtonWrapper = ({ amount, currency, showSpinner, onSubmit }) => {
             { (showSpinner && isPending) && <div className="spinner" /> }
             <PayPalButtons
                 style={style}
-                disabled={false}
+                disabled={disablity}
                 forceReRender={[amount, currency, style]}
                 fundingSource={undefined}
                 createOrder={(data, actions) => {

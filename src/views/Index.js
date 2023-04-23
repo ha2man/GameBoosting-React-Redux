@@ -21,7 +21,7 @@ function Index({game}) {
       <Advertise game={game} />
       <CompletedOrders mode={game} />
       <FAQ game={game} />
-      <ContactUs />
+      {/* <ContactUs /> */}
     </>
   );
 }

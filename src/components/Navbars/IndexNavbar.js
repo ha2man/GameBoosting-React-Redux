@@ -117,7 +117,16 @@ function IndexNavbar() {
                   <p>Orders</p>
                 </NavLink>
               </NavItem>
-              <NavItem>
+              { currentUser && 
+                <NavItem>
+                  <NavLink
+                    href="/your-order"
+                  >
+                    <p>Your Orders</p>
+                  </NavLink>
+                </NavItem>
+              }
+             <NavItem>
                 <NavLink
                   href="/terms"
                 >

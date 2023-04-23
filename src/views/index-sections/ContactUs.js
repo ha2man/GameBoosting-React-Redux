@@ -31,7 +31,7 @@ function ContactUs() {
                             <CardTitle className="title-up" tag="h3">
                                 Contact Us
                             </CardTitle>
-                            <div className="social-line">
+                            {/* <div className="social-line">
                                 <Button
                                 className="btn-neutral btn-icon btn-round"
                                 color="facebook"
@@ -57,7 +57,7 @@ function ContactUs() {
                                 >
                                 <i className="fab fa-google-plus"></i>
                                 </Button>
-                            </div>
+                            </div> */}
                             </CardHeader>
                             <CardBody>
                             <InputGroup

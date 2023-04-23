@@ -14,6 +14,7 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 
 import Index from "views/Index";
 import Order from "views/Order";
+import YOrder from "views/YOrder";
 import Login from "views/Login";
 import Term from "views/Term";
 import Signup from 'views/Signup';
@@ -44,6 +45,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             {/* <Route path="/profile" element={<Profile />} /> */}
             <Route path="/order" element={<Order mode="all" />} />
+            <Route path="/your-order" element={<YOrder />} />
             <Route path="/rocket-league-boosting" element={<Index game="rocket" />} />
             <Route path="/league-legend-boosting" element={<Index game="legend" />} />
           </Routes>

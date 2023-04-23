@@ -13,6 +13,17 @@ export const createOrder = createAsyncThunk(
       }
     }
 );
+export const getYOrders = createAsyncThunk(
+  "order/:id",
+  async ({limit, id}, thunkAPI) => {
+    try {
+      const response = await OrderService.getYOrders(thunkAPI.dispatch, {limit, id});
+      return response.data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue();
+    }
+  }
+);
 export const getOrders = createAsyncThunk(
     "order",
     async ({limit}, thunkAPI) => {
@@ -27,6 +38,7 @@ export const getOrders = createAsyncThunk(
 
 const initialState = {
     orders: [],
+    yorders: [],
     isLoading: false,
     error: "",
     boostType: 1,
@@ -36,6 +48,9 @@ const orderSlice = createSlice({
   name: "order",
   initialState,
   reducers: {
+    setYOrders: (state, action) => {
+      state.yorders = action.payload;
+    },
     setOrders: (state, action) => {
       state.orders = action.payload;
     },
@@ -53,5 +68,5 @@ const orderSlice = createSlice({
 
 const { reducer, actions } = orderSlice;
 
-export const { setOrders,setBoost, setLoading, setError } = actions
+export const { setYOrders, setOrders,setBoost, setLoading, setError } = actions
 export default reducer;
