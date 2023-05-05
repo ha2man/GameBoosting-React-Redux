@@ -1,7 +1,7 @@
 import React from "react";
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-
+import { useNavigate } from 'react-router-dom';
 // reactstrap components
 import {
   Card,
@@ -19,9 +19,11 @@ import {
 const dataList = [
   {
     src: "images/background-wallpaper/slide-1.png",
+    url: '/rocket-league-boosting',
   },
   {
     src: "images/background-wallpaper/slide-2.png",
+    url: '/league-legend-boosting',
   },
 ];
 
@@ -41,27 +43,42 @@ const properties = {
 }
 
 function SectionCarousel() {
-  
+  const navigate = useNavigate();
   return (
-    <div style={{height:'calc(100vh)'}}>
-      <Slide {...properties}>
-        {
-          dataList.map(item => (
-            <div className="each-slide-effect" style={{width:'100%', height:'calc(100vh)'}}>
-                <div style={{
-                  height: '100%',
-                  width: '100%',
-                  backgroundPosition: 'center',
-                  backgroundSize: 'cover',
-                  backgroundImage: `url(${item.src})`
-                }}>
-                    <span>Slide 1</span>
-                </div>
-            </div>
-          ))
-        }
-      </Slide>
-    </div>
+    <>
+      <div style={{height:'calc(100vh)'}}>
+        <Slide {...properties}>
+          {
+            dataList.map(item => (
+              <div className="each-slide-effect" style={{width:'100%', height:'calc(100vh)'}}>
+                  <div style={{
+                    height: '100%',
+                    width: '100%',
+                    backgroundPosition: 'center',
+                    backgroundSize: 'cover',
+                    backgroundImage: `url(${item.src})`
+                  }}>
+                      <div className="page-header custom-home" style={{height:"100%"}}>
+                        <div className="text-center" style={{width:'100%', margin:'auto'}}>
+                            <h1 className='h1-seo-home' style={{marginTop:'calc(30vh)'}}>
+                                Relatedboost
+                            </h1>
+                            <p style={{width:'50%', margin:'auto', fontSize:'22px', opacity:'0.9'}}>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus.
+                                Donec vitae tempus dolor, sit amet elementum lorem. Ut cursus tempor turpis.</p>
+                            <div style={{position:'absolute', width:'100%', marginTop:'100px', zIndex: 100,}}>
+                              <button onClick={() => navigate(item.url)} className='my-btn-white' style={{margin:'auto', fontSize:'21px', fontWeight:'500',}}>
+                                  Get Start
+                              </button>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+              </div>
+            ))
+          }
+        </Slide>
+      </div>
+    </>
   );
 }
 

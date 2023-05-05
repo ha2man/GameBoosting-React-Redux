@@ -23,18 +23,6 @@ function Home() {
                 }}
             >
                 <Carousel />
-                <div className="page-header custom-home" style={{height:"100%"}}>
-                    <div className="content-center brand custom-home">
-                        <h1 className='h1-seo-home'>
-                            Relatedboost
-                        </h1>
-                        <p style={{marginLeft:'30px', marginRight:'30px', fontSize:'22px', opacity:'0.9'}}>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus.
-                            Donec vitae tempus dolor, sit amet elementum lorem. Ut cursus tempor turpis.</p>
-                        <button onClick={() => navigate("/rocket-league-boosting")} className='my-btn-white' style={{marginTop:'100px', fontSize:'21px', fontWeight:'500',}}>
-                            Get Start
-                        </button>
-                    </div>
-                </div>
             </div>
             <div style={{
                     height:'696px',
