@@ -33,6 +33,7 @@ body {
     text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.8);
     margin-bottom: 4rem;
     text-transform: initial;
+    
     opacity: 0.9;
 }
 .brand.custom p {
@@ -279,6 +280,26 @@ footer.footer {
 }
 .my-btn-black:hover:not(:disabled) {
     color:rgb(5, 5, 5);
+    background-color: lightgray;
+}
+.my-btn-white {
+    color: black;
+    padding: 1rem 2rem;
+    background-position: 0 -28px;
+    background-image: url("../img/download.jpg");
+    border: 1px solid rgb(68, 68, 68);
+    box-shadow: 0px 10px 30px rgba(30, 30, 30, 0.7);
+    border-radius: 50px;
+    transition: 0.5s;
+}
+.my-btn-white:disabled {
+    color: rgb(131, 131, 131);
+    background-color: rgba(100, 100, 100, 0.1);
+    box-shadow: 0px 5px 10px rgba(30, 30, 30, 0.7);
+}
+.my-btn-white:hover:not(:disabled) {
+    background-position: 0 33px;
+    color:white;
     background-color: lightgray;
 }
 .my-btn-round {
@@ -717,7 +738,8 @@ footer.footer {
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
-	background-image: url("../img/header.jpg");
+	background-image: url("../img/download.jpg");
+    background-position: top;
 }
 
 

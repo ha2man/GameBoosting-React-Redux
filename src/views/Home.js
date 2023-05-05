@@ -26,11 +26,11 @@ function Home() {
                 <div className="page-header custom-home" style={{height:"100%"}}>
                     <div className="content-center brand custom-home">
                         <h1 className='h1-seo-home'>
-                            Related Boost
+                            Relatedboost
                         </h1>
-                        <p style={{marginLeft:'30px', marginRight:'30px', fontSize:'22px', opacity:'0.7'}}>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus.
+                        <p style={{marginLeft:'30px', marginRight:'30px', fontSize:'22px', opacity:'0.9'}}>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus.
                             Donec vitae tempus dolor, sit amet elementum lorem. Ut cursus tempor turpis.</p>
-                        <button onClick={() => navigate("/rocket-league-boosting")} className='my-btn-black' style={{boxShadow:'0px 7px 3px rgb(70,150,220)', marginTop:'100px', fontSize:'20px', fontWeight:'500',}}>
+                        <button onClick={() => navigate("/rocket-league-boosting")} className='my-btn-white' style={{marginTop:'100px', fontSize:'20px', fontWeight:'500',}}>
                             Get Start
                         </button>
                     </div>
