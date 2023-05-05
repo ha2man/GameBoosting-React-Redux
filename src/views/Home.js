@@ -55,7 +55,7 @@ function Home() {
                             <span className='image-block' onClick={() => onBoostType('rocket', 7)} style={{animationDelay: '-63s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/champion2.png' /></span>
                         </div>
                         <div className='image-block-group legend'>
-                            <span className='image-block-center' onClick={() => navigate('/league-legend-boosting')}>
+                            <span className='image-block-center' onClick={() => onBoostType('legend')}>
                                 <ImageBlock color={legend_color} size={180} url='/images/legend_rank/legend.png' />
                                 <div className='text-center' style={{color:`rgb(${legend_color})`,fontSize:'20px',fontWeight:'600'}}><strong>+5</strong> services</div>
                             </span>
