@@ -283,9 +283,9 @@ footer.footer {
     background-color: lightgray;
 }
 .my-btn-white {
-    color: black;
+    color: white;
     padding: 1rem 2rem;
-    background-position: 0 -28px;
+    background-position: 0px -40px;
     background-image: url("../img/download.jpg");
     border: 1px solid rgb(68, 68, 68);
     box-shadow: 0px 10px 30px rgba(30, 30, 30, 0.7);
@@ -298,7 +298,7 @@ footer.footer {
     box-shadow: 0px 5px 10px rgba(30, 30, 30, 0.7);
 }
 .my-btn-white:hover:not(:disabled) {
-    background-position: 0 33px;
+    background-position: 20px 0px;
     color:white;
     background-color: lightgray;
 }

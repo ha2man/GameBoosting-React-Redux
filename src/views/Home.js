@@ -30,7 +30,7 @@ function Home() {
                         </h1>
                         <p style={{marginLeft:'30px', marginRight:'30px', fontSize:'22px', opacity:'0.9'}}>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus.
                             Donec vitae tempus dolor, sit amet elementum lorem. Ut cursus tempor turpis.</p>
-                        <button onClick={() => navigate("/rocket-league-boosting")} className='my-btn-white' style={{marginTop:'100px', fontSize:'20px', fontWeight:'500',}}>
+                        <button onClick={() => navigate("/rocket-league-boosting")} className='my-btn-white' style={{marginTop:'100px', fontSize:'21px', fontWeight:'500',}}>
                             Get Start
                         </button>
                     </div>
