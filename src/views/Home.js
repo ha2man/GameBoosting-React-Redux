@@ -101,7 +101,7 @@ function Home() {
                                 - Shaco - 
                             </p>
                             <p>
-                                Fusce erat dui, venenatis et erat in, vulputate dignissim lacus. Donec vitae tempus dolor, sit amet elementum lorem. Ut cursus tempor turpis.
+                                Shaco, the Demon Jester, cackled with glee as he appeared out of nowhere, his twisted grin sending shivers down his opponents' spines. "Why so serious?" he taunted, juggling his daggers with unsettling ease. He loved nothing more than to toy with his enemies, confusing and disorienting them with his illusions. "Life is a joke," he declared, his eyes sparkling with malice. "And I'm the punchline." With a flick of his wrist, he vanished into thin air, leaving only chaos and confusion in his wake.
                             </p>
                         </div>
                     </div>
@@ -114,7 +114,7 @@ function Home() {
                                 - Katarina - 
                             </p>
                             <p style={{textAlign: 'justify'}}>
-                                I love providing the best service to all our customers! But, many of them are afraid to buy because they don't want to be disappointed. Check our Trustpilot page and see for yourself.
+                                Katarina, the Sinister Blade, surveyed the battlefield with a calculating gaze. "The truest opponent lies within," she said, twirling her daggers with deadly grace. She knew that to win, she needed not only physical prowess but also mental agility. And as she lunged forward, her blades flashing in the sunlight, she proved that her mind was just as sharp as her weapons. "I do what I must," she declared, her eyes blazing with determination. "For Noxus."
                             </p>
                         </div>
                     </div>
