@@ -1,14 +1,22 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Carousel from '../components/Common/Carousel';
 import FAQ from './index-sections/FAQ';
 import ImageBlock from 'components/Common/ImageBlock';
-import { Grid } from 'swiper';
+import { setBoost } from 'app/slices/order';
 
 function Home() {
     const rocket_color='250,50,150';
     const legend_color='50,150,250';
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+
+    const onBoostType = (game, index = 1) => {
+        if (game === 'rocket') navigate('/rocket-league-boosting');
+        if (game === 'legend') navigate('/league-legend-boosting');
+        dispatch(setBoost(index));
+    }
     return (
         <div className=''>
             <div
@@ -34,28 +42,28 @@ function Home() {
                 <div className='container py-5' style={{height:'100%'}}>
                     <div className='image-block-container'>
                         <div className='image-block-group rocket'>
-                            <span className='image-block-center' onClick={() => navigate('/rocket-league-boosting')}>
+                            <span className='image-block-center' onClick={() => onBoostType('rocket')}>
                                 <ImageBlock center={true} color={rocket_color} size={180} url='/images/rocket_rank/rocket-big.png' />
                                 <div className='text-center' style={{color:`rgb(${rocket_color})`,fontSize:'20px',fontWeight:'600'}}><strong>+7</strong> services</div>
                             </span>
-                            <span className='image-block' style={{animationDelay: '-9s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/gc2.png' /></span>
-                            <span className='image-block' style={{animationDelay: '-18s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/unranked.png' /></span>
-                            <span className='image-block' style={{animationDelay: '-27s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/diamond2.png' /></span>
-                            <span className='image-block' style={{animationDelay: '-36s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/tournamentwin.png' /></span>
-                            <span className='image-block' style={{animationDelay: '-45s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/champion1.png' /></span>
-                            <span className='image-block' style={{animationDelay: '-54s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/ssl.png' /></span>
-                            <span className='image-block' style={{animationDelay: '-63s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/champion2.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('rocket', 1)} style={{animationDelay: '-9s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/gc2.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('rocket', 2)} style={{animationDelay: '-18s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/unranked.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('rocket', 3)} style={{animationDelay: '-27s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/diamond2.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('rocket', 4)} style={{animationDelay: '-36s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/tournamentwin.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('rocket', 5)} style={{animationDelay: '-45s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/champion1.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('rocket', 6)} style={{animationDelay: '-54s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/ssl.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('rocket', 7)} style={{animationDelay: '-63s'}}><ImageBlock color={rocket_color} size={120} url='/images/rocket_rank/champion2.png' /></span>
                         </div>
                         <div className='image-block-group legend'>
                             <span className='image-block-center' onClick={() => navigate('/league-legend-boosting')}>
                                 <ImageBlock color={legend_color} size={180} url='/images/legend_rank/legend.png' />
                                 <div className='text-center' style={{color:`rgb(${legend_color})`,fontSize:'20px',fontWeight:'600'}}><strong>+5</strong> services</div>
                             </span>
-                            <span className='image-block' style={{animationDelay: '-9s'}}><ImageBlock color={legend_color} size={120} url='/images/legend_rank/rank_boosting.png' /></span>
-                            <span className='image-block' style={{animationDelay: '-18s'}}><ImageBlock color={legend_color} size={120} url='/images/legend_rank/win_boosting.png' /></span>
-                            <span className='image-block' style={{animationDelay: '-27s'}}><ImageBlock color={legend_color} size={120} url='/images/legend_rank/duo_boosting.png' /></span>
-                            <span className='image-block' style={{animationDelay: '-36s'}}><ImageBlock color={legend_color} size={120} url='/images/legend_rank/placements.png' /></span>
-                            <span className='image-block' style={{animationDelay: '-45s'}}><ImageBlock color={legend_color} size={120} url='/images/legend_rank/coaching.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('legend', 1)} style={{animationDelay: '-9s'}}><ImageBlock color={legend_color} size={120} url='/images/legend_rank/rank_boosting.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('legend', 2)} style={{animationDelay: '-18s'}}><ImageBlock color={legend_color} size={120} url='/images/legend_rank/win_boosting.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('legend', 3)} style={{animationDelay: '-27s'}}><ImageBlock color={legend_color} size={120} url='/images/legend_rank/duo_boosting.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('legend', 4)} style={{animationDelay: '-36s'}}><ImageBlock color={legend_color} size={120} url='/images/legend_rank/placements.png' /></span>
+                            <span className='image-block' onClick={() => onBoostType('legend', 5)} style={{animationDelay: '-45s'}}><ImageBlock color={legend_color} size={120} url='/images/legend_rank/coaching.png' /></span>
                         </div>
                         
                     </div>

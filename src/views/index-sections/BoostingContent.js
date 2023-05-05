@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { PayPalScriptProvider} from "@paypal/react-paypal-js";
 import {
     Container,
@@ -45,7 +46,8 @@ function BoostingContent({game}) {
     const basicColor = (game==="rocket"?"rgba(210, 66, 66, 0.9)":"rgba(158, 13, 231,0.9)");
     const dispatch = useDispatch();
     const navigate = useNavigate();
-
+    const { pathname } = useLocation();
+    
     let current_list = [];
     let desired_list = [];
 
@@ -249,6 +251,9 @@ function BoostingContent({game}) {
     }
     loadList();
     
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
     useEffect(() => {
         loadList();
         setCurrent(0);
