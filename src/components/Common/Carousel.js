@@ -68,7 +68,7 @@ function SectionCarousel() {
                                 Welcome to Relatedboost, here we provide de best and cheapest boosting services for Rocket League and League of Legends.
                               </p>
                               <button onClick={() => navigate(item.url)} className='my-btn-white' style={{margin:'auto', marginTop:'10rem', fontSize:'21px', fontWeight:'500',}}>
-                                  Get Start
+                                  Get Started
                               </button>
                             </div>
                         </div>
