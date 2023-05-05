@@ -19,6 +19,7 @@ import Login from "views/Login";
 import Term from "views/Term";
 import Signup from 'views/Signup';
 import Profile from 'views/Profile';
+import Home from 'views/Home';
 
 function App() {
   useEffect(() => {
@@ -39,7 +40,7 @@ function App() {
       <div className="wrapper">
         <div className="main">
           <Routes>
-            <Route path="/" element={<Navigate to='/rocket-league-boosting' />} />
+            <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/terms" element={<Term />} />
             <Route path="/signup" element={<Signup />} />

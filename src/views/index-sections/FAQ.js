@@ -36,7 +36,12 @@ const faqList = [
 
 function FAQ() {
     return (
-        <div className="section section-faq">
+        <div className="section section-faq" style={{
+            backgroundPosition: 'top',
+            backgroundSize: 'cover',
+            backgroundImage: `url("images/background-wallpaper/gamekbg_generated.jpg")`,
+            paddingBottom: '10rem',
+        }}>
             <div className='container'>
                 <div className="custom-faq">
                     <div className="header">FAQ</div>

@@ -34,7 +34,7 @@ function DarkFooter() {
               </ul>
             </div>
           </Col>
-          <Col className="footer-block mt-4">
+          <Col className="footer-block mt-5">
             <p>Payment methods</p>
             <img src="./images/paypal.png" alt="paypal" width="50%" />
           </Col>

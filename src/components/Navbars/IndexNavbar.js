@@ -98,6 +98,13 @@ function IndexNavbar() {
             <Nav navbar>
               <NavItem>
                 <NavLink
+                  href="/"
+                >
+                  <p>Home</p>
+                </NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink
                   href="/rocket-league-boosting"
                 >
                   <p>Rocket League</p>
