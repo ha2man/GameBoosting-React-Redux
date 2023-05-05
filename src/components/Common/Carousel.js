@@ -60,13 +60,14 @@ function SectionCarousel() {
                   }}>
                       <div className="page-header custom-home" style={{height:"100%"}}>
                         <div className="text-center" style={{width:'100%', margin:'auto'}}>
-                            <h1 className='h1-seo-home' style={{marginTop:'calc(30vh)'}}>
-                                Relatedboost
-                            </h1>
-                            <p style={{width:'50%', margin:'auto', fontSize:'22px', opacity:'0.9'}}>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus.
-                                Donec vitae tempus dolor, sit amet elementum lorem. Ut cursus tempor turpis.</p>
                             <div style={{position:'absolute', width:'100%', marginTop:'100px', zIndex: 100,}}>
-                              <button onClick={() => navigate(item.url)} className='my-btn-white' style={{margin:'auto', fontSize:'21px', fontWeight:'500',}}>
+                              <h1 className='h1-seo-home' style={{marginTop:'calc(25vh)'}}>
+                                  Relatedboost
+                              </h1>
+                                <p style={{width:'50%', margin:'auto', fontSize:'22px', opacity:'0.9'}}>Fusce erat dui, venenatis et erat in, vulputate dignissim lacus.
+                                  Donec vitae tempus dolor, sit amet elementum lorem. Ut cursus tempor turpis.
+                              </p>
+                              <button onClick={() => navigate(item.url)} className='my-btn-white' style={{margin:'auto', marginTop:'5rem', fontSize:'21px', fontWeight:'500',}}>
                                   Get Start
                               </button>
                             </div>
