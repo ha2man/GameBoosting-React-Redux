@@ -24,7 +24,9 @@ function BoostingMenu({game}) {
                                 "legend":game==="legend",
                                 "active":boostType===item.id
                             }
-                        )} onClick={() => onBoost(item.id)}><img src={img_url+item.url+".png"} alt={item.url} /><p>{item.name}</p></div>
+                        )} onClick={() => onBoost(item.id)}><img src={img_url+item.url+".png"} width={120} height={87} alt={item.url} />
+                        <p style={{fontFamily:'odibeeSansFont', fontSize:'28px', fontWeight:'400'}}>{item.name}</p>
+                        </div>
                     ))
                 }
             </div>

@@ -1,61 +1,106 @@
 import React, { useState, useEffect } from "react";
 import {
+    Container,
     Row,
     Col
 } from 'reactstrap';
-const data = [
+const dataList = [
     {
         id: 0,
-        title: "General",
-        content: `Welcome to our website! We are dedicated to helping Rocket League and League of Legends players reach their desired ranks with ease. Our team of experienced players offers reliable and affordable boosting services, ensuring that you get the rank you want without the hassle. Don't waste any more time struggling to climb the ranks - let us help you achieve your goals and dominate the competition.`
+        url: 'Group_38362.png',
+        title: "SSL encrypted website",
+        content: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et mattis dolor, ut egestas risus. Proin iaculis porta hendrerit. Aliquam facilisis tincidunt enim, et aliquam felis`
     },
     {
         id: 1,
-        title: "Safety",
-        content: "At our website, we understand the importance of providing not only efficient, but also secure services for our clients. That's why we take great care in ensuring that our boosters use only safe and reliable methods, guaranteeing the protection of your account from any potential risks such as bans or suspensions. Don't hesitate any longer, start your journey towards improving your League of Legends performance now and let our skilled team guide you towards success."
+        url: 'Group_38363.png',
+        title: "Members Area",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et mattis dolor, ut egestas risus. Proin iaculis porta hendrerit."
     },
     {
         id: 2,
-        title: "Trackboost",
-        content: "You'll be able to engage in chat with your booster, ensuring that you stay in the loop throughout the entire process. You'll also find detailed instructions on what to do next as the boosting process begins. Your booster will keep you updated on their progress through Discord. If at any point you feel uncertain or have any questions, don't hesitate to reach out to us through our Discord server."
+        url: 'Group_38364.png',
+        title: "Fast & Efficient",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et mattis dolor, ut egestas risus. Proin iaculis porta hendrerit. Aliquam facilisis tincidunt enim"
+    },
+    {
+        id: 3,
+        url: 'Group_38365.png',
+        title: "Live chat with booster",
+        content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et mattis dolor, ut egestas risus. Proin iaculis porta hendrerit. Aliquam facilisis tincidunt enim, et aliquam felis",
     }
-]
+];
+const stateList = [
+    {
+        id: 0,
+        title: 'Clients',
+        content: '150+',
+    },
+    {
+        id: 1,
+        title: 'Completed Orders',
+        content: '400+',
+    },
+    {
+        id: 2,
+        title: 'Lorum Ipsum',
+        content: '3000+',
+    },
+    {
+        id: 3,
+        title: 'Lorum Ipsum',
+        content: '6',
+    },
+];
 function Advertise() {
-    const [ focusItem, setFocusItem ] = useState(0);
     return (
         <div className="section-reqa">
-            <div className="boost-end"></div>
-            <div className="container reqa">
-                <div>
+            <div style={{
+                    position: 'absolute',
+                    bottom: '-300px',
+                    width: '100%',
+                    background: '#150D24',
+                    paddingTop: '350px',
+                    paddingBottom: '100px',
+                    textAlign: 'center',
+                }}>
+                <Container fluid='md'>
+                    <Row>
+                        {
+                            stateList.map(item => (
+                                <Col key={'state'+item.id} xs='12' sm='6' md='3'>
+                                    <p>{item.title}</p>
+                                    <p style={{fontWeight:'600', fontSize:'54px'}}>{item.content}</p>
+                                </Col>
+                            ))
+                        }
+                    </Row>
+                </Container>
+            </div>
+            <Container fluid='md'>
+                <h1 className="text-center" style={{paddingBottom: '64px', fontFamily: 'odibeeSansFont', fontWeight:'400', fontSize:'78px'}}>Lorum Ipsum</h1>
+                <Row>
                     {
-                        data.map((item) => (
-                            <span key={item.id} onClick={() => setFocusItem(item.id)}>{item.title}</span>
+                        dataList.map(item => (
+                            <Col key={'data'+item.id} xs='12' sm='6' md='3' style={{
+                            }}>
+                                <div style={{
+                                    border:'1px solid #F1AC5C',
+                                    borderRadius: '8px',
+                                    padding:'30px',
+                                    minHeight: '400px',
+                                    backgroundColor: '#010518'
+                                }}>
+                                    <img src={`./${item.url}`} alt='ads-block' />
+                                    <p style={{marginTop:'20px', fontWeight:'700', fontSize:'20px'}}>{item.title}</p>
+                                    <p style={{marginTop:'32px', fontWeight:'400', fontSize:'16px', color:'#8E95BB'}}>{item.content}</p>
+                                </div>
+                            </Col>
                         ))
                     }
-                </div>
-                <hr style={{width: "60%", margin:"2rem 0", border: "none", height: "2px", backgroundColor: "rgb(96,96,96)"}}></hr>
-                <div className="reqa-content">
-                    <p>{data[focusItem].content}</p>
-                </div>
-                <Row>
-                    <Col className="reqa-block">
-                        <i className="fas fa-lock" aria-hidden="true"></i>
-                        <div>SSL encrypted website</div>
-                    </Col>
-                    <Col className="reqa-block">
-                        <i className="fas fa-users" aria-hidden="true"></i>
-                        <div>Members Area</div>
-                    </Col>
-                    <Col className="reqa-block">
-                        <i className="fas fa-shipping-fast" aria-hidden="true"></i>
-                        <div>Fast & Efficient</div>
-                    </Col>
-                    <Col className="reqa-block">
-                        <i className="fas fa-comments" aria-hidden="true"></i>
-                        <div>Live chat with booster</div>
-                    </Col>
                 </Row>
-            </div>
+            </Container>
+            
         </div>
     )
 }

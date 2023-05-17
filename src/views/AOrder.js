@@ -25,7 +25,16 @@ function YOrder({mode}) {
         <div className="section section-order bg-order" style={{minHeight:"calc(80vh)"}}>
                 <Container fluid="xl">
                     <div className="header" style={{fontFamily:'odibeeSansFont', fontSize:'78px', fontWeight:'400', marginBottom:'64px'}}>
-                        Your Orders
+                        Accept Orders
+                    </div>
+                    <div className="filter-join" style={{
+                        position: 'absolute',
+                        background: '#EE9328',
+                        left: '-5.31%',
+                        top: '-0.6%',
+                        width: '310px',
+                        height: '310px',
+                    }}>
                     </div>
                     { isLoading ?
                         <div style={{marginTop:"calc(10vh)", marginBottom:"calc(10vh)", textAlign:"center"}}>
@@ -63,6 +72,15 @@ function YOrder({mode}) {
                             </div>
                         )
                     }
+                    <div className="filter-join" style={{
+                        position: 'absolute',
+                        background: '#EE9328',
+                        right: '-5.31%',
+                        bottom: '-0.6%',
+                        width: '310px',
+                        height: '310px',
+                    }}>
+                    </div>
                 </Container>
         </div>
     )

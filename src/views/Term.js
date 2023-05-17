@@ -8,7 +8,17 @@ function Term() {
     return (
         <div className="section section-term">
             <Container fluid="xl">
+                <div className="filter-join" style={{
+                    position: 'absolute',
+                    background: '#EE9328',
+                    left: '-5.31%',
+                    top: '-0.6%',
+                    width: '310px',
+                    height: '310px',
+                }}>
+                </div>
                 <div>
+                    
                     <h2>1. Links to Third-Party Websites</h2>
                     <p>
                     Our Service may include hyperlinks to websites or services that are not owned or controlled by us (hereafter referred to as "Relatedboost"). Please note that Relatedboost does not have control over, and assumes no responsibility for, the content, privacy policies, or practices of any third-party websites or services. By using our Service, you acknowledge and agree that Relatedboost shall not be held responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with the use of or reliance on any such content, goods or services available on or through any such websites or services.
@@ -159,6 +169,15 @@ function Term() {
                     <p>
                     3.8 Customers have the right to contact the admins of Relatedboost with a request to remove any content that infringes their copyright. Relatedboost acknowledges and respects the intellectual property rights of others, and will take appropriate actions to remove any infringing content from its Site upon proper notification from customers who hold the copyrights to such content.
                     </p>
+                </div>
+                <div className="filter-join" style={{
+                    position: 'absolute',
+                    background: '#EE9328',
+                    right: '-5.31%',
+                    bottom: '0.6%',
+                    width: '310px',
+                    height: '310px',
+                }}>
                 </div>
             </Container>
         </div>

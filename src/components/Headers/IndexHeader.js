@@ -9,12 +9,12 @@ const headerNames = [
   {
     url: "/rocket-league-boosting",
     name: "Rocket League boosting",
-    img: "/images/background-wallpaper/1.jpg",
+    img: "/images/background-wallpaper/wallpaperflare-rocket.png",
   },
   {
     url: "/league-legend-boosting",
     name: "League of Legend boosting",
-    img: "/images/background-wallpaper/2.jpg",
+    img: "/images/background-wallpaper/wallpaperflare-legend.png",
   },
 ];
 function IndexHeader({game}) {
@@ -37,7 +37,7 @@ function IndexHeader({game}) {
 
   return (
     <>
-    <div
+      <div
           className="page-header-image"
           style={{
             backgroundPosition: (game=="rocket"?"left":""),
@@ -46,16 +46,9 @@ function IndexHeader({game}) {
           }}
           ref={pageHeader}
         >
-      <div id="canvas-pl" className="page-header clear-filter custom" filter-color="black">
-        
-        <div className="content-center brand custom">
-            <h1 className="h1-seo">
-              {headerNames[currentId].name}
-            </h1>
-            <p>Select from Rank boosting and {game=="rocket"?7:5}+ services.</p>
-          </div>
-        <canvas id="canvas" width="1242" height="400" style={{width: '100%', height: '100%'}}></canvas>
-      </div>
+        <div id="canvas-pl" className="page-header clear-filter custom" style={{height:'509px'}} filter-color="black">
+          {/* <canvas id="canvas" width="1242" height="509" style={{width: '100%', height: '100%'}}></canvas> */}
+        </div>
       </div>
     </>
   );

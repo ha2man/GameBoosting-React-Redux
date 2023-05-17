@@ -11,15 +11,15 @@ import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
+import JoinServer from "components/Footers/JoinServer";
 
 import Index from "views/Index";
 import Order from "views/Order";
 import YOrder from "views/YOrder";
-import Login from "views/Login";
+import AOrder from "views/AOrder";
 import Term from "views/Term";
-import Signup from 'views/Signup';
-import Profile from 'views/Profile';
 import Home from 'views/Home';
+import Contact from 'views/Contact';
 
 function App() {
   useEffect(() => {
@@ -41,16 +41,17 @@ function App() {
         <div className="main">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
             <Route path="/terms" element={<Term />} />
-            <Route path="/signup" element={<Signup />} />
+            <Route path='/contact' element={<Contact />} />
             {/* <Route path="/profile" element={<Profile />} /> */}
             <Route path="/order" element={<Order mode="all" />} />
             <Route path="/your-order" element={<YOrder />} />
+            <Route path="/accept-order" element={<AOrder />} />
             <Route path="/rocket-league-boosting" element={<Index game="rocket" />} />
             <Route path="/league-legend-boosting" element={<Index game="legend" />} />
           </Routes>
         </div>
+        <JoinServer />
         <DarkFooter />
       </div>
     </Router>
