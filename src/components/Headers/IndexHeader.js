@@ -9,12 +9,12 @@ const headerNames = [
   {
     url: "/rocket-league-boosting",
     name: "Rocket League boosting",
-    img: "/images/background-wallpaper/wallpaperflare-rocket.png",
+    img: "/images/background-wallpaper/wallpaperflare-rocket.jpg",
   },
   {
     url: "/league-legend-boosting",
     name: "League of Legend boosting",
-    img: "/images/background-wallpaper/wallpaperflare-legend.png",
+    img: "/images/background-wallpaper/wallpaperflare-legend.jpg",
   },
 ];
 function IndexHeader({game}) {

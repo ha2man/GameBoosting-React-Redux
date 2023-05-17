@@ -116,7 +116,7 @@ function Home() {
                 <Container fluid='lg'>
                     <Row>
                         <Col style={{position: 'relative', minWidth: '300px'}}>
-                            <img src={require('../assets/img/wallpaperflare2.png')} alt='wallpaperflare2' width={660} height={580} />
+                            <img src={require('../assets/img/wallpaperflare2.jpg')} alt='wallpaperflare2' width={660} height={580} />
                             <div className='filter-picture' style={{
                                 position: 'absolute',
                                 top:'480px',
@@ -163,7 +163,7 @@ function Home() {
                             <button className='btn-orange' onClick={() => navigate('/rocket-league-boosting')}>Get Started</button>
                         </Col>
                         <Col style={{position: 'relative', minWidth: '300px'}}>
-                            <img src={require('../assets/img/wallpaperflare3.png')} alt='wallpaperflare2' width={660} height={580} />
+                            <img src={require('../assets/img/wallpaperflare3.jpg')} alt='wallpaperflare2' width={660} height={580} />
                             <div className='filter-picture' style={{
                                 position: 'absolute',
                                 top:'480px',
