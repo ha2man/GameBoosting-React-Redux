@@ -78,7 +78,7 @@ function Advertise() {
                 </Container>
             </div>
             <Container fluid='md'>
-                <h1 className="text-center" style={{paddingBottom: '64px', fontFamily: 'odibeeSansFont', fontWeight:'400', fontSize:'78px'}}>Lorum Ipsum</h1>
+                <h3 className="text-center" style={{paddingBottom: '64px', fontFamily: 'odibeeSansFont', fontWeight:'400', fontSize:'78px'}}>Lorum Ipsum</h3>
                 <Row>
                     {
                         dataList.map(item => (
