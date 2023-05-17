@@ -1,7 +1,7 @@
 import axios from "axios";
 import { setYOrders, setOrders, setLoading, setError } from 'app/slices/order';
-const API_URL = "http://localhost:5000/api/order/";
-// const API_URL = "https://relatedboost-g8pf2.ondigitalocean.app/api/order/";
+// const API_URL = "http://localhost:5000/api/order/";
+const API_URL = "https://relatedboost-g8pf2.ondigitalocean.app/api/order/";
 const createOrder = (dispatch, data) => {
     dispatch(setError(""));
     dispatch(setLoading(true));
