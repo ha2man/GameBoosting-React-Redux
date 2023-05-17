@@ -127,9 +127,9 @@ function Home() {
                             }}></div>
                         </Col>
                         <Col style={{color: '#BABED6', fontSize:'20px', fontWeight:'500'}}>
-                            <h2 style={{color: 'white', fontFamily:'odibeeSansFont', fontSize:'78px', fontWeight:'400'}}>
+                            <h3 style={{color: 'white', fontFamily:'odibeeSansFont', fontSize:'78px', fontWeight:'400'}}>
                                 Rocket League
-                            </h2>
+                            </h3>
                             <p style={{paddingBottom:'24px', fontSize:'20px'}}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et mattis dolor, ut egestas risus. Proin iaculis porta hendrerit. Aliquam facilisis tincidunt enim, et aliquam felis ve
                             </p>
@@ -147,9 +147,9 @@ function Home() {
                     </Row>
                     <Row style={{marginTop:'137px'}}>
                         <Col style={{color: '#BABED6', fontSize:'20px', fontWeight:'500'}}>
-                            <h2 style={{color: 'white', fontFamily:'odibeeSansFont', fontSize:'78px', fontWeight:'400'}}>
+                            <h3 style={{color: 'white', fontFamily:'odibeeSansFont', fontSize:'78px', fontWeight:'400'}}>
                                 League of Legends
-                            </h2>
+                            </h3>
                             <p style={{paddingBottom:'24px', fontSize:'20px'}}>
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et mattis dolor, ut egestas risus. Proin iaculis porta hendrerit. Aliquam facilisis tincidunt enim, et aliquam felis ve
                             </p>
@@ -185,12 +185,12 @@ function Home() {
                 zIndex: 50,
             }}>
                 <Container>
-                    <h2 style={{
+                    <h4 style={{
                         fontFamily: 'odibeeSansFont',
                         fontSize:'78px',
                         textAlign: 'center',
                         paddingBottom: '62px',
-                    }}>What Our Client Says</h2>
+                    }}>What Our Client Says</h4>
                     <div style={{
                         fontFamily: 'urbanistFont',
                         border: '1px solid #F1AC5C',
