@@ -392,9 +392,7 @@ function BoostingContent({game}) {
                     <div className="d-flex text-center" style={{width:"100%"}}>
                         
                         <div className="flex-fill">
-                            {/* <Button onClick={onSubmit} className="paypal-btn mb-3">
-                                <span style={{color:"rgba(54, 95, 219)"}}>Pay</span><span style={{color:"rgba(54, 135, 219)"}}>Pal</span>
-                            </Button> */}
+                            {/* <button onClick={onSubmit} className="btn-orange mb-3">PayPal</button> */}
                             <ButtonWrapper
                                 disablity={(!orderOption.play && (guserdata==="" || gpassword===""))}
                                 amount={price.total}

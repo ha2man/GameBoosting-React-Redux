@@ -781,6 +781,20 @@ footer.footer {
     border: none;
     outline: none;
 }
+.btn-orange-outline {
+    color: #D43E3E;
+    background-color: transparent;
+    border: 1px solid #D43E3E;
+    border-radius: 8px;
+    padding: 14px 48px;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: 'urbanistFont';
+    outline: none;
+}
+.btn-orange-outline.disabled {
+    border: none;
+}
 
 .filter-first {
     filter:blur(45px);

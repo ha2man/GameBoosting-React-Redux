@@ -178,7 +178,7 @@ function IndexNavbar() {
               { currentUser && 
                 <NavItem>
                   {
-                  currentUser.userType === 'user' ?
+                  currentUser.usertype === 'user' ?
                     <NavLink
                       href="/your-order"
                       style={{position:'relative'}}

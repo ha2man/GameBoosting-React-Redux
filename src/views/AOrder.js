@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Navigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import classnames from 'classnames';
 import {
@@ -9,21 +9,35 @@ import {
     Spinner,
 } from 'reactstrap'
 import OrderBlock from 'components/Common/OrderBlock';
-import { getYOrders } from 'app/slices/order';
-function YOrder({mode}) {
-    const { isLoading, yorders } = useSelector(state => state.order);
+import { getAOrders, acceptOrder } from 'app/slices/order';
+function AOrder({mode}) {
+    const { isLoading, aorders } = useSelector(state => state.order);
     const [ limit, setLimit ] = useState(1);
-    const { user: currentUser } = useSelector(state => state.auth);
+    const { user: currentUser, isLoggedIn } = useSelector(state => state.auth);
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
     useEffect(() => {
-        dispatch(getYOrders({limit, id: currentUser.userid}));
+        if (!isLoggedIn) {
+            navigate('/');
+            window.location.reload();
+        } else if (currentUser.usertype==='user'){
+            navigate('/')
+            window.location.reload();
+        } else {
+            dispatch(getAOrders({limit}));
+        }
     }, [limit])
+
+    const handleAccept = (order_id) => {
+        if (currentUser && currentUser.usertype === 'booster') {
+            dispatch(acceptOrder({id:currentUser.userid, order_id}));   
+        }
+    }
     
     return (
         <div className="section section-order bg-order" style={{minHeight:"calc(80vh)"}}>
-                <Container fluid="xl">
+                <Container>
                     <div className="header" style={{fontFamily:'odibeeSansFont', fontSize:'78px', fontWeight:'400', marginBottom:'64px'}}>
                         Accept Orders
                     </div>
@@ -36,42 +50,62 @@ function YOrder({mode}) {
                         height: '310px',
                     }}>
                     </div>
+                    <div style={{
+                        position:'relative',
+                        backgroundColor:'#010518',
+                        border:'1px solid #F1AC5C',
+                        boxShadow: '0px 0px 10px 1px rgba(241, 172, 92, 0.25)',
+                        borderRadius: '8px',
+                        zIndex:'50',
+                    }}>
                     { isLoading ?
                         <div style={{marginTop:"calc(10vh)", marginBottom:"calc(10vh)", textAlign:"center"}}>
                             <Spinner style={{ color:"#ffffff", width: '6rem', height: '6rem' }} />
                         </div> :
                         (
-                            yorders.length ?
-                            yorders
+                            aorders.length ?
+                            aorders
                                 .map(item => {
                                 return (
                                     <Row xs="1" md="2" sm="4">
-                                        <Col>
+                                        <Col xs={{size:'3'}}>
                                             <OrderBlock game={item.game} url={item.game} title="Game" data={item.game==="rocket"?"Rocket League":"League of Legends"} />
                                         </Col>
-                                        <Col>
+                                        <Col xs={{size:'3'}}>
                                             <OrderBlock game={item.game} url={item.current.url} title="From" data={item.current.name} />
                                         </Col>
-                                        <Col>
+                                        <Col xs={{size:'3'}}>
                                             <OrderBlock game={item.game} url={item.desired.url} title="To" data={item.desired.name} />
                                         </Col>
-                                        <Col>
-                                            <OrderBlock game={item.game} url="date" title="Date" data={item.date.slice(0, 10)} />
-                                        </Col>
-                                        <Col>
-                                            <p className="pt-3"
-                                                style={{fontSize:"20px", fontWeight:"600", color: item.state === "Completed" ? "#44cc44" : (item.state === "Waiting" ? "#cc4444" : "#3399ee") }}>
-                                                {item.state}
-                                            </p>
+                                        <Col xs={{size:'3'}}>
+                                        {
+                                            item.state === 'Waiting'
+                                            ?
+                                            <button onClick={() => handleAccept(item._id)} className='btn-orange'>Accept Order</button>
+                                            :
+                                            (
+                                                item.boosterId === currentUser.userid
+                                                ?
+                                                <button className='btn-orange-outline'>
+                                                    Accepted By You
+                                                </button>
+                                                :
+                                                <button className='btn-orange-outline disabled'>
+                                                    Accepted
+                                                </button>
+                                            )
+                                            
+                                        }
                                         </Col>
                                     </Row>
                                 )
                             }) :
-                            <div style={{marginTop:"calc(15vh)", marginBottom:"calc(10vh)", fontWeight:"800", fontSize:"24px", color:'#FFFFFF'}}>
+                            <div style={{marginTop:"calc(15vh)", marginBottom:"calc(15vh)", fontWeight:"800", fontSize:"24px", color:'#FFFFFF'}}>
                                 <p>No order yet ...</p>
                             </div>
                         )
                     }
+                    </div>
                     <div className="filter-join" style={{
                         position: 'absolute',
                         background: '#EE9328',
@@ -86,4 +120,4 @@ function YOrder({mode}) {
     )
 }
 
-export default YOrder;
+export default AOrder;
