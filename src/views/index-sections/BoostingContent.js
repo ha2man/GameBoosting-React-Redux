@@ -323,7 +323,7 @@ function BoostingContent({game}) {
     const toggle = () => setModal(!modal);
     const onBoost = () => {
         if (!currentUser) {
-            navigate('/login');
+            navigate('/');
         } else {
             setModal(!modal);
         }

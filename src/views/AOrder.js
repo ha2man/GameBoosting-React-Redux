@@ -63,7 +63,7 @@ function AOrder({mode}) {
                             <Spinner style={{ color:"#ffffff", width: '6rem', height: '6rem' }} />
                         </div> :
                         (
-                            aorders.length ?
+                            aorders.length && currentUser ?
                             aorders
                                 .map(item => {
                                 return (
